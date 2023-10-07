@@ -1,4 +1,4 @@
-# example taken from https://github.com/james-willett/mkdocs-material-youtube-tutorial/blob/main/.github/workflows/ci.yml
+# example taken from https://github.com/james-willett/mkdocs-material-youtube-tutorial/blob/main/.github/workflows/ci.yml´
 name: Documentation 
 on:
   push:
@@ -19,6 +19,7 @@ jobs:
         with:
           key: ${{ github.ref }}
           path: .cache
+      - run: python -m pip install --upgrade pip
       - run: pip install -r requirements.txt
       - run: pip install pillow cairosvg
       - run: mkdocs gh-deploy --force
